@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { User, Bell, Settings, HelpCircle, LogOut, HeartHandshake, Mail, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -96,8 +96,7 @@ function Row({ icon, label, to }: { icon: React.ReactNode; label: string; to?: "
     </div>
   );
   if (to) {
-    // dynamic import would be nicer but we can use Link via prop
-    return <a href={to}>{inner}</a>;
+    return <Link to={to}>{inner}</Link>;
   }
   return <button className="w-full text-left">{inner}</button>;
 }

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bell, Menu, Calendar, ChevronRight } from "lucide-react";
 
-export const Route = createFileRoute("/_app/home")({
+export const Route = createFileRoute("/_authenticated/home")({
   head: () => ({ meta: [{ title: "Home — TLF" }] }),
   component: Home,
 });

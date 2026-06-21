@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, Heart, Lock } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-export const Route = createFileRoute("/_app/donate")({
+export const Route = createFileRoute("/_authenticated/donate")({
   head: () => ({ meta: [{ title: "Donate — TLF" }] }),
   component: Donate,
 });

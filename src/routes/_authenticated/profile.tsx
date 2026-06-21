@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { User, Bell, Settings, HelpCircle, LogOut, HeartHandshake, Mail, ChevronRight } from "lucide-react";
 
-export const Route = createFileRoute("/_app/profile")({
+export const Route = createFileRoute("/_authenticated/profile")({
   head: () => ({ meta: [{ title: "Profile — TLF" }] }),
   component: Profile,
 });

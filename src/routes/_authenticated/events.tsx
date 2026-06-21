@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 
-export const Route = createFileRoute("/_app/events")({
+export const Route = createFileRoute("/_authenticated/events")({
   head: () => ({ meta: [{ title: "News & Events — TLF" }] }),
   component: Events,
 });

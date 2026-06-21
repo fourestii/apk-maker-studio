@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, User, Mail, Phone, Briefcase, Calendar } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-export const Route = createFileRoute("/_app/volunteer")({
+export const Route = createFileRoute("/_authenticated/volunteer")({
   head: () => ({ meta: [{ title: "Volunteer — TLF" }] }),
   component: Volunteer,
 });

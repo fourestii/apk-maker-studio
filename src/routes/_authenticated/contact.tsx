@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, User, Mail, FileText } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-export const Route = createFileRoute("/_app/contact")({
+export const Route = createFileRoute("/_authenticated/contact")({
   head: () => ({ meta: [{ title: "Contact Us — TLF" }] }),
   component: Contact,
 });

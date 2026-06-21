@@ -9,24 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as AppRouteImport } from './routes/_app'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AppVolunteerRouteImport } from './routes/_app.volunteer'
-import { Route as AppReportsRouteImport } from './routes/_app.reports'
-import { Route as AppProfileRouteImport } from './routes/_app.profile'
-import { Route as AppHomeRouteImport } from './routes/_app.home'
-import { Route as AppEventsRouteImport } from './routes/_app.events'
-import { Route as AppDonateRouteImport } from './routes/_app.donate'
-import { Route as AppContactRouteImport } from './routes/_app.contact'
+import { Route as AuthenticatedVolunteerRouteImport } from './routes/_authenticated/volunteer'
+import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as AuthenticatedHomeRouteImport } from './routes/_authenticated/home'
+import { Route as AuthenticatedEventsRouteImport } from './routes/_authenticated/events'
+import { Route as AuthenticatedDonateRouteImport } from './routes/_authenticated/donate'
+import { Route as AuthenticatedContactRouteImport } from './routes/_authenticated/contact'
 
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppRoute = AppRouteImport.update({
-  id: '/_app',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -34,82 +34,82 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppVolunteerRoute = AppVolunteerRouteImport.update({
+const AuthenticatedVolunteerRoute = AuthenticatedVolunteerRouteImport.update({
   id: '/volunteer',
   path: '/volunteer',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppReportsRoute = AppReportsRouteImport.update({
+const AuthenticatedReportsRoute = AuthenticatedReportsRouteImport.update({
   id: '/reports',
   path: '/reports',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppProfileRoute = AppProfileRouteImport.update({
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppHomeRoute = AppHomeRouteImport.update({
+const AuthenticatedHomeRoute = AuthenticatedHomeRouteImport.update({
   id: '/home',
   path: '/home',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppEventsRoute = AppEventsRouteImport.update({
+const AuthenticatedEventsRoute = AuthenticatedEventsRouteImport.update({
   id: '/events',
   path: '/events',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppDonateRoute = AppDonateRouteImport.update({
+const AuthenticatedDonateRoute = AuthenticatedDonateRouteImport.update({
   id: '/donate',
   path: '/donate',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AppContactRoute = AppContactRouteImport.update({
+const AuthenticatedContactRoute = AuthenticatedContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/signup': typeof SignupRoute
-  '/contact': typeof AppContactRoute
-  '/donate': typeof AppDonateRoute
-  '/events': typeof AppEventsRoute
-  '/home': typeof AppHomeRoute
-  '/profile': typeof AppProfileRoute
-  '/reports': typeof AppReportsRoute
-  '/volunteer': typeof AppVolunteerRoute
+  '/auth': typeof AuthRoute
+  '/contact': typeof AuthenticatedContactRoute
+  '/donate': typeof AuthenticatedDonateRoute
+  '/events': typeof AuthenticatedEventsRoute
+  '/home': typeof AuthenticatedHomeRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/reports': typeof AuthenticatedReportsRoute
+  '/volunteer': typeof AuthenticatedVolunteerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/signup': typeof SignupRoute
-  '/contact': typeof AppContactRoute
-  '/donate': typeof AppDonateRoute
-  '/events': typeof AppEventsRoute
-  '/home': typeof AppHomeRoute
-  '/profile': typeof AppProfileRoute
-  '/reports': typeof AppReportsRoute
-  '/volunteer': typeof AppVolunteerRoute
+  '/auth': typeof AuthRoute
+  '/contact': typeof AuthenticatedContactRoute
+  '/donate': typeof AuthenticatedDonateRoute
+  '/events': typeof AuthenticatedEventsRoute
+  '/home': typeof AuthenticatedHomeRoute
+  '/profile': typeof AuthenticatedProfileRoute
+  '/reports': typeof AuthenticatedReportsRoute
+  '/volunteer': typeof AuthenticatedVolunteerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/_app': typeof AppRouteWithChildren
-  '/signup': typeof SignupRoute
-  '/_app/contact': typeof AppContactRoute
-  '/_app/donate': typeof AppDonateRoute
-  '/_app/events': typeof AppEventsRoute
-  '/_app/home': typeof AppHomeRoute
-  '/_app/profile': typeof AppProfileRoute
-  '/_app/reports': typeof AppReportsRoute
-  '/_app/volunteer': typeof AppVolunteerRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_authenticated/contact': typeof AuthenticatedContactRoute
+  '/_authenticated/donate': typeof AuthenticatedDonateRoute
+  '/_authenticated/events': typeof AuthenticatedEventsRoute
+  '/_authenticated/home': typeof AuthenticatedHomeRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/_authenticated/reports': typeof AuthenticatedReportsRoute
+  '/_authenticated/volunteer': typeof AuthenticatedVolunteerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/signup'
+    | '/auth'
     | '/contact'
     | '/donate'
     | '/events'
@@ -120,7 +120,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/signup'
+    | '/auth'
     | '/contact'
     | '/donate'
     | '/events'
@@ -131,37 +131,37 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/_app'
-    | '/signup'
-    | '/_app/contact'
-    | '/_app/donate'
-    | '/_app/events'
-    | '/_app/home'
-    | '/_app/profile'
-    | '/_app/reports'
-    | '/_app/volunteer'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/contact'
+    | '/_authenticated/donate'
+    | '/_authenticated/events'
+    | '/_authenticated/home'
+    | '/_authenticated/profile'
+    | '/_authenticated/reports'
+    | '/_authenticated/volunteer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AppRoute: typeof AppRouteWithChildren
-  SignupRoute: typeof SignupRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app': {
-      id: '/_app'
+    '/_authenticated': {
+      id: '/_authenticated'
       path: ''
       fullPath: '/'
-      preLoaderRoute: typeof AppRouteImport
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -171,84 +171,85 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app/volunteer': {
-      id: '/_app/volunteer'
+    '/_authenticated/volunteer': {
+      id: '/_authenticated/volunteer'
       path: '/volunteer'
       fullPath: '/volunteer'
-      preLoaderRoute: typeof AppVolunteerRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedVolunteerRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/reports': {
-      id: '/_app/reports'
+    '/_authenticated/reports': {
+      id: '/_authenticated/reports'
       path: '/reports'
       fullPath: '/reports'
-      preLoaderRoute: typeof AppReportsRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedReportsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/profile': {
-      id: '/_app/profile'
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
       path: '/profile'
       fullPath: '/profile'
-      preLoaderRoute: typeof AppProfileRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/home': {
-      id: '/_app/home'
+    '/_authenticated/home': {
+      id: '/_authenticated/home'
       path: '/home'
       fullPath: '/home'
-      preLoaderRoute: typeof AppHomeRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedHomeRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/events': {
-      id: '/_app/events'
+    '/_authenticated/events': {
+      id: '/_authenticated/events'
       path: '/events'
       fullPath: '/events'
-      preLoaderRoute: typeof AppEventsRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedEventsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/donate': {
-      id: '/_app/donate'
+    '/_authenticated/donate': {
+      id: '/_authenticated/donate'
       path: '/donate'
       fullPath: '/donate'
-      preLoaderRoute: typeof AppDonateRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedDonateRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_app/contact': {
-      id: '/_app/contact'
+    '/_authenticated/contact': {
+      id: '/_authenticated/contact'
       path: '/contact'
       fullPath: '/contact'
-      preLoaderRoute: typeof AppContactRouteImport
-      parentRoute: typeof AppRoute
+      preLoaderRoute: typeof AuthenticatedContactRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
   }
 }
 
-interface AppRouteChildren {
-  AppContactRoute: typeof AppContactRoute
-  AppDonateRoute: typeof AppDonateRoute
-  AppEventsRoute: typeof AppEventsRoute
-  AppHomeRoute: typeof AppHomeRoute
-  AppProfileRoute: typeof AppProfileRoute
-  AppReportsRoute: typeof AppReportsRoute
-  AppVolunteerRoute: typeof AppVolunteerRoute
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedContactRoute: typeof AuthenticatedContactRoute
+  AuthenticatedDonateRoute: typeof AuthenticatedDonateRoute
+  AuthenticatedEventsRoute: typeof AuthenticatedEventsRoute
+  AuthenticatedHomeRoute: typeof AuthenticatedHomeRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
+  AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
+  AuthenticatedVolunteerRoute: typeof AuthenticatedVolunteerRoute
 }
 
-const AppRouteChildren: AppRouteChildren = {
-  AppContactRoute: AppContactRoute,
-  AppDonateRoute: AppDonateRoute,
-  AppEventsRoute: AppEventsRoute,
-  AppHomeRoute: AppHomeRoute,
-  AppProfileRoute: AppProfileRoute,
-  AppReportsRoute: AppReportsRoute,
-  AppVolunteerRoute: AppVolunteerRoute,
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedContactRoute: AuthenticatedContactRoute,
+  AuthenticatedDonateRoute: AuthenticatedDonateRoute,
+  AuthenticatedEventsRoute: AuthenticatedEventsRoute,
+  AuthenticatedHomeRoute: AuthenticatedHomeRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
+  AuthenticatedReportsRoute: AuthenticatedReportsRoute,
+  AuthenticatedVolunteerRoute: AuthenticatedVolunteerRoute,
 }
 
-const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AppRoute: AppRouteWithChildren,
-  SignupRoute: SignupRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

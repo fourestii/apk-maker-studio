@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FileText, Download } from "lucide-react";
 
-export const Route = createFileRoute("/_app/reports")({
+export const Route = createFileRoute("/_authenticated/reports")({
   head: () => ({ meta: [{ title: "Reports — TLF" }] }),
   component: Reports,
 });
